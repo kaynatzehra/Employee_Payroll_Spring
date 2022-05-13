@@ -1,26 +1,21 @@
 package com.example.demo.service;
-import com.example.demo.dto.EmployeePayrollDTO;
-import com.example.demo.model.EmployeePayrollData;
+import com.example.demo.dto.EmployeeDTO;
+import com.example.demo.model.Employee;
 
 import java.util.List;
-import java.util.Optional;
 
+//Created IEmployeePayrollService interface to achieve abstraction
 public interface IEmployeePayrollService {
-    String getMessage(String name);
 
-    String postMessage(EmployeePayrollDTO employee);
+//    public String getWelcome();
 
-    String putMessage(String name);
+    public Employee postDataToRepo(EmployeeDTO employeeDTO);
 
-    String getWelcome();
+    public List<Employee> getAllData();
 
-    public EmployeePayrollData postDataToRepo(EmployeePayrollDTO employee);
+    public Employee getDataById(Integer id);
 
-    public List<EmployeePayrollData> getAllData();
-
-    public Optional<EmployeePayrollData> getDataById(Integer id);
-
-    public EmployeePayrollData updateDataById(Integer id, EmployeePayrollDTO employeeDTO);
+    public Employee updateDataById(Integer id, EmployeeDTO employeeDTO);
 
     public String deleteDataById(Integer id);
 }
